@@ -1,9 +1,13 @@
-package U1_Refactoring.VierGewinnt.src;
+package U1_Refactoring.VierGewinnt.src.objektorientiert;
 
-import java.io.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class VierGewinntTest {
@@ -43,11 +47,9 @@ public class VierGewinntTest {
         final InputStream in = new ByteArrayInputStream(sb.toString().getBytes());
         final ByteArrayOutputStream out = new ByteArrayOutputStream();
         final ByteArrayOutputStream err = new ByteArrayOutputStream();
-        final VierGewinnt game = new VierGewinnt(in, new PrintStream(out), new PrintStream(err));
+        final U1_Refactoring.VierGewinnt.src.objektorientiert.VierGewinnt game = new VierGewinnt(in, new PrintStream(out), new PrintStream(err));
         game.play();
         final String output = out.toString();
-        System.out.println(err);
-        System.out.println(out);
         assertTrue(output.contains(expectedOutcome), "Incorrect output: " + output);
     }
 
