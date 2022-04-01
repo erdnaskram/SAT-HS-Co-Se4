@@ -1,7 +1,9 @@
 package U1_Refactoring.VierGewinnt.src;
 
 import java.io.*;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class VierGewinntTest {
@@ -44,7 +46,9 @@ public class VierGewinntTest {
         final VierGewinnt game = new VierGewinnt(in, new PrintStream(out), new PrintStream(err));
         game.play();
         final String output = out.toString();
-        assertTrue("Incorrect output: " + output,  output.contains(expectedOutcome));
+        System.out.println(err);
+        System.out.println(out);
+        assertTrue(output.contains(expectedOutcome), "Incorrect output: " + output);
     }
 
 }

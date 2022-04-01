@@ -1,57 +1,56 @@
-//package U1_Refactoring.VierGewinnt.src.objektorientiert;
-//
-//import U1_Refactoring.VierGewinnt.src.objektorientiert.VierGewinnt;
-//import org.junit.jupiter.api.Test;
-//
-//import java.io.ByteArrayInputStream;
-//import java.io.ByteArrayOutputStream;
-//import java.io.InputStream;
-//import java.io.PrintStream;
-//
-//import static org.junit.jupiter.api.Assertions.assertTrue;
-//
-//
-//public class VierGewinntTest {
-//
-//    @Test
-//	public void testIsOverRow() throws Exception {
-//        assertOutcome("Spieler mit ohat gewonnen", 8,7,1, 1, 2, 2, 3, 3, 4);
-//	}
-//
-//    @Test
-//    public void testIsOverStraight2() throws Exception {
-//        assertOutcome("Spieler mit ohat gewonnen", 8,7,2,3,3,5,4,4,5,5,5,6,4);
-//    }
-//
-//    @Test
-//	public void testIsOverStraight1() throws Exception {
-//        assertOutcome("Spieler mit ohat gewonnen", 8,7,5,4,3,3,4,2,2,2,2,1,3);
-//	}
-//
-//    @Test
-//	public void testUnentschieden() throws Exception {
-//		assertOutcome("Unentschieden!", 8,7,1,2,1,2,1,2,2,1,2,1,2,1,1,2,3,4,3,4,3,4,4,3,4,3,4,3,3,4,5,6,5,
-//                6,5,6,6,5,6,5,6,5,5,6,7,8,7,8,7,8,8,7,8,7,8,7,7,8);
-//	}
-//
-//    @Test
-//    public void testIsOverColum() throws Exception {
-//        assertOutcome("Spieler mit ohat gewonnen", 8,7,6,5,5,6,5,6,5,6,5);
-//    }
-//
-//    private void assertOutcome(String expectedOutcome, int width, int height, int... choices) {
-//        final StringBuilder sb = new StringBuilder("x\ny\n" + width + "\n" + height + "\n");
-//        for (int choice: choices) {
-//            sb.append(choice);
-//            sb.append("\n");
-//        }
-//        final InputStream in = new ByteArrayInputStream(sb.toString().getBytes());
-//        final ByteArrayOutputStream out = new ByteArrayOutputStream();
-//        final ByteArrayOutputStream err = new ByteArrayOutputStream();
-//        final U1_Refactoring.VierGewinnt.src.objektorientiert.VierGewinnt game = new VierGewinnt(in, new PrintStream(out), new PrintStream(err));
-//        game.play();
-//        final String output = out.toString();
-//        assertTrue(output.contains(expectedOutcome), "Incorrect output: " + output);
-//    }
-//
-//}
+package U1_Refactoring.VierGewinnt.src.objektorientiert;
+
+import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
+public class VierGewinntTest {
+
+    @Test
+	public void testIsOverRow() throws Exception {
+        assertOutcome("Spieler mit ohat gewonnen", 8,7,1, 1, 2, 2, 3, 3, 4);
+	}
+
+    @Test
+    public void testIsOverStraight2() throws Exception {
+        assertOutcome("Spieler mit ohat gewonnen", 8,7,2,3,3,5,4,4,5,5,5,6,4);
+    }
+
+    @Test
+	public void testIsOverStraight1() throws Exception {
+        assertOutcome("Spieler mit ohat gewonnen", 8,7,5,4,3,3,4,2,2,2,2,1,3);
+	}
+
+    @Test
+	public void testUnentschieden() throws Exception {
+		assertOutcome("Unentschieden!", 8,7,1,2,1,2,1,2,2,1,2,1,2,1,1,2,3,4,3,4,3,4,4,3,4,3,4,3,3,4,5,6,5,
+                6,5,6,6,5,6,5,6,5,5,6,7,8,7,8,7,8,8,7,8,7,8,7,7,8);
+	}
+
+    @Test
+    public void testIsOverColum() throws Exception {
+        assertOutcome("Spieler mit ohat gewonnen", 8,7,6,5,5,6,5,6,5,6,5);
+    }
+
+    private void assertOutcome(String expectedOutcome, int width, int height, int... choices) {
+        final StringBuilder sb = new StringBuilder("x\ny\n" + width + "\n" + height + "\n");
+        for (int choice: choices) {
+            sb.append(choice);
+            sb.append("\n");
+        }
+        final InputStream in = new ByteArrayInputStream(sb.toString().getBytes());
+        final ByteArrayOutputStream out = new ByteArrayOutputStream();
+        final ByteArrayOutputStream err = new ByteArrayOutputStream();
+        final U1_Refactoring.VierGewinnt.src.objektorientiert.VierGewinnt game = new VierGewinnt(in, new PrintStream(out), new PrintStream(err));
+        game.play();
+        final String output = out.toString();
+        assertTrue(output.contains(expectedOutcome), "Incorrect output: " + output);
+    }
+
+}
