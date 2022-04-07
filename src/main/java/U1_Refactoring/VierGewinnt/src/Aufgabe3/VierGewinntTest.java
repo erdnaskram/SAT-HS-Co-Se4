@@ -1,4 +1,4 @@
-package U1_Refactoring.VierGewinnt.src.objektorientiert;
+package U1_Refactoring.VierGewinnt.src.Aufgabe3;
 
 import org.junit.jupiter.api.Test;
 
@@ -47,7 +47,7 @@ public class VierGewinntTest {
         final InputStream in = new ByteArrayInputStream(sb.toString().getBytes());
         final ByteArrayOutputStream out = new ByteArrayOutputStream();
         final ByteArrayOutputStream err = new ByteArrayOutputStream();
-        final U1_Refactoring.VierGewinnt.src.objektorientiert.VierGewinnt game = new VierGewinnt(in, new PrintStream(out), new PrintStream(err));
+        final U1_Refactoring.VierGewinnt.src.Aufgabe3.VierGewinnt game = new VierGewinnt(in, new PrintStream(out), new PrintStream(err));
         game.play();
         final String output = out.toString();
         assertTrue(output.contains(expectedOutcome), "Incorrect output: " + output);
