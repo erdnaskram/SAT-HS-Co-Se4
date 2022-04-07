@@ -1,10 +1,10 @@
-package U1_Refactoring.VierGewinnt.src.objektorientiert;
+package U1_Refactoring.VierGewinnt.src.Aufgabe3;
 
 
 import java.io.InputStream;
 import java.io.PrintStream;
 
-import static U1_Refactoring.VierGewinnt.src.objektorientiert.VierGewinntIO.*;
+import static U1_Refactoring.VierGewinnt.src.Aufgabe3.VierGewinntIO.*;
 
 public class VierGewinnt {
 
