@@ -1,6 +1,6 @@
 package DP1_Composite_Pattern;
 
-public class Blatt {
+public class Blatt extends Komponente {
     private static float counter = 100000;
     private String nachname;
     private String vorname;
@@ -21,7 +21,7 @@ public class Blatt {
     public String toString() {
         return "Name: " + nachname.toUpperCase() + " " + vorname +
                 " Personalnummer: " + personalnummer +
-                " Abteilung: " + abteilung +
+                " Abteilung: " + abteilung.toUpperCase() +
                 " Zuständigkeit: " + zustaendigkeit +
                 " Gehalt: " + gehalt;
     }
