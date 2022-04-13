@@ -15,14 +15,15 @@ public class Kompositum extends Komponente{
         this.abteilungsname = abteilungsname;
         komponenten = new ArrayList<>();
         abteilungsleitung.setAbteilung(abteilungsname);
+        abteilungsleitung.setIstVorgesetzter(true);
     }
 
-    public void addKomponent(@NotNull Blatt komponente) {
+    public void addMitarbeiter(@NotNull Blatt komponente) {
         komponente.setAbteilung(abteilungsname);
         komponenten.add(komponente);
     }
 
-    public void addKomponent(Kompositum komponente) {
+    public void addAbteilung(Kompositum komponente) {
         komponenten.add(komponente);
     }
 

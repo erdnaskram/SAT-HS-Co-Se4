@@ -1,29 +1,37 @@
 package DP1_Composite_Pattern;
 
 public class Blatt extends Komponente {
-    private static float counter = 100000;
+    private static int counter = 100000;
     private String nachname;
     private String vorname;
-    private final float personalnummer;
+    private final int personalnummer;
     private String abteilung;
     private String zustaendigkeit;
     private float gehalt;
+    private boolean istVorgesetzter = false;
 
     public Blatt(String nachname, String vorname, String zustaendigkeit, float gehalt) {
         this.nachname = nachname;
         this.vorname = vorname;
         this.zustaendigkeit = zustaendigkeit;
         this.gehalt = gehalt;
-        personalnummer = counter++;
+        personalnummer = ++counter;
     }
 
     @Override
     public String toString() {
-        return "Name: " + nachname.toUpperCase() + " " + vorname +
-                " Personalnummer: " + personalnummer +
-                " Abteilung: " + abteilung.toUpperCase() +
-                " Zuständigkeit: " + zustaendigkeit +
-                " Gehalt: " + gehalt;
+        if (istVorgesetzter)
+            return "Name: " + nachname.toUpperCase() + " " + vorname +
+                    " Personalnummer: " + personalnummer +
+                    " Abteilung: " + abteilung.toUpperCase() +
+                    " Zuständigkeit: " + zustaendigkeit +
+                    " Gehalt: " + gehalt;
+        else
+            return "Name: " + nachname + " " + vorname +
+                    " Personalnummer: " + personalnummer +
+                    " Abteilung: " + abteilung.toUpperCase() +
+                    " Zuständigkeit: " + zustaendigkeit +
+                    " Gehalt: " + gehalt;
     }
 
     public String getNachname() {
@@ -68,5 +76,13 @@ public class Blatt extends Komponente {
 
     public void setGehalt(float gehalt) {
         this.gehalt = gehalt;
+    }
+
+    public boolean isIstVorgesetzter() {
+        return istVorgesetzter;
+    }
+
+    public void setIstVorgesetzter(boolean istVorgesetzter) {
+        this.istVorgesetzter = istVorgesetzter;
     }
 }
