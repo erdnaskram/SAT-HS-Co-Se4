@@ -2,6 +2,9 @@ package DP1_Composite_Pattern;
 
 public class Main {
     public static void main(String[] args) {
+
+        // INIT --------------------------------------------------------------------------------------------------------
+
         Blatt reichEgon = new Blatt("Reich","Egon",
                 "Geschäftsführer", (float) 40239.03);
         Blatt faulLars = new Blatt("Faul","Lars",
@@ -10,6 +13,7 @@ public class Main {
                 "Sachbearbeiter", (float) 2020.0);
         Blatt meyerPeter = new Blatt("Meyer","Peter",
                 "Sachbearbeiter", (float) 2000.0);
+
         Kompositum management = new Kompositum(reichEgon, "Management");
         Kompositum medien = new Kompositum(faulLars, "medien");
 
@@ -18,6 +22,10 @@ public class Main {
         medien.addMitarbeiter(schmittKonrad);
         medien.addMitarbeiter(meyerPeter);
 
+
+        // OUTPUT ------------------------------------------------------------------------------------------------------
+
+        System.out.println("DP1: Composite Pattern\n\n");
         System.out.println(management);
     }
 }

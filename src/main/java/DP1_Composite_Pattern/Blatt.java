@@ -5,7 +5,7 @@ public class Blatt extends Komponente {
     private String nachname;
     private String vorname;
     private final int personalnummer;
-    private String abteilung;
+    private String abteilung = "#nicht zugeordnet";
     private String zustaendigkeit;
     private float gehalt;
     private boolean istVorgesetzter = false;
