@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Sandwich implements Komponente{
     static final DecimalFormat df = new DecimalFormat("0.00");
-    private List<Toppings> toppings;
+    private final List<Toppings> toppings;
 
     public Sandwich() {
         toppings = new ArrayList<>();
