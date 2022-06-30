@@ -1,0 +1,9 @@
+Änderungen:
+
+Folgende Methoden wurden von VierGewinnt in VierGewinntIO verschoben:
+- eingabeString()
+- eingabeInt()
+- showSpielfeld()
+
+Außerdem wurde den Methoden noch die benötigten Streams (inputStream,
+printStreamOut) als Parameter mitgegeben.

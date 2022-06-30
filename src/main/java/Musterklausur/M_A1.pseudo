@@ -1,0 +1,40 @@
+
+Tank {
+    // Maximal Kapazität in liter
+    static final int MAXFUELL = 10000;
+    int aktuelleFuellKapazitaet; // in liter
+    Ventil dasEingangsventil;
+    Ventil dasAusgangsventil;
+    // Tank mit Flüssigkeit komplett füllen
+    void füllen() {...}
+    // Tank um Flüssigkeit vollständig leeren
+    void leeren() { ... }
+    boolean istLeer() { ... }
+    boolean istVoll() { ... }
+}
+
+Ventil {
+    boolean istOffen() { ... }
+    boolean istGeschlossen() { ... }
+}
+
+//? A) ______________________________________________
+
+//* Precondition
+
+dasEingangsventil.istOffen() == true;
+dasAusgangsventil.istGeschlossen() == true;
+Tank.istVoll() == false;
+
+//! Postcondition
+
+dasEingangsventil.istGeschlossen() == true;
+dasAusgangsventil.istGeschlossen() == true;
+Tank.istVoll() == true;
+
+
+//? B) ______________________________________________
+
+0 <= aktuelleFuellKapazitaet <= MAXFUELL * 0,97
+
+!(dasEingangsventil.istOffen() == true && dasAusgangsventil.istOffen() == true)
